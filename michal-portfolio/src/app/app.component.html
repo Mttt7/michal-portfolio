@@ -2,7 +2,8 @@
   <div class="greet">
     <div class="greetings">Hi, I am</div>
 
-    <div class="name  tracking-in-expand move-top" (mouseenter)="changetoMichael()">{{name}}</div>
+    <div class="name  tracking-in-expand move-top" (mouseenter)="changetoMichael()" (click)="changetoMichael()">{{name}}
+    </div>
   </div>
 
 
@@ -25,7 +26,7 @@
   <div class="skills">
 
     <div class="skill" *ngFor="let skill of skills" [ngClass]="{'typescriptLogo':skill.name=='TypeScript'}"
-      (mouseenter)="hoverEffect($event)">
+      (mouseenter)="hoverEffect($event)" (click)="hoverEffect($event)">
       <img [src]="skill.img" [ngClass]="{'firebaseLogo':skill.name=='Firebase'}" alt="">
     </div>
   </div>

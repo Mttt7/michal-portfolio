@@ -142,10 +142,6 @@ $violet: rgb(196, 2, 255);
     }
 }
 
-
-
-
-
 .spinner-wrapper {
     display: flex;
     width: 100%;
@@ -400,3 +396,35 @@ $violet: rgb(196, 2, 255);
 }
 
 //-----
+
+//media queries
+
+@media (max-width: 720px) {
+    .skills {
+        flex-wrap: wrap;
+    }
+
+    .name {
+        font-size: 4rem;
+    }
+
+    .main {
+        .about-me {
+            width: 80%;
+
+        }
+    }
+
+
+    .projects {
+        .project {
+            .title {
+                font-size: 2rem;
+            }
+
+            width: 320px;
+            height: 200px;
+        }
+
+    }
+}
