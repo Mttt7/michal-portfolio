@@ -1,0 +1,75 @@
+<div *ngIf="loaded; else loading" class="main">
+  <div class="greet">
+    <div class="greetings">Hi, I am</div>
+
+    <div class="name  tracking-in-expand move-top" (mouseenter)="changetoMichael()">{{name}}</div>
+  </div>
+
+
+  <div class="about-me hover-border-effect-blue">
+    I am a third-year Computer Science student. I'm really into programming and I love to learn new things. I actively
+    seek out opportunities to expand my knowledge and improve my programming skills.
+
+  </div>
+  <div class="about-me about-me2 hover-border-effect-red">
+    I am eager to find a place where I can contribute to real projects and further enhance my skills through practical
+    experience.
+  </div>
+
+  <div class="skills">
+
+    <div class="skill" *ngFor="let skill of skills" [ngClass]="{'typescriptLogo':skill.name=='TypeScript'}"
+      (mouseenter)="hoverEffect($event)">
+      <img [src]="skill.img" [ngClass]="{'firebaseLogo':skill.name=='Firebase'}" alt="">
+    </div>
+  </div>
+
+  <div class="projects">
+    <div class="project" *ngFor="let project of projects" [style.backgroundImage]="'url(' + project.img + ')'"
+      (click)="redirectToLink(project.link)">
+
+      <div class="title">
+        {{project.name}}
+      </div>
+      <!-- <div class="image">
+        <img [src]="project.img" alt="">
+      </div> -->
+      <div class="description">
+        {{project.description}}
+      </div>
+      <div class="used-skills">
+        <div class="skill" *ngFor="let skill of project.skills">
+          <img [src]="getImgForSkill(skill)" [ngClass]="{'firebaseLogo':skill=='Firebase'}" alt="">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="footer sticky-footer">
+    <div class="links">
+      <div class="link" *ngFor="let link of links">
+        <a [href]="link.href">
+          <img [src]="link.icon" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<ng-template #loading>
+  <!-- Efekt ładowania strony -->
+  <div class="spinner-wrapper">
+    <div class="spinner">
+
+    </div>
+    <div class="spinner-inner"></div>
+
+
+
+  </div>
+</ng-template>

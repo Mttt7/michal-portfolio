@@ -1,0 +1,374 @@
+//variables-------
+$blue: rgb(21, 136, 250);
+$red: rgb(233, 45, 60);
+$gray: rgb(37, 36, 36);
+$violet: rgb(196, 2, 255);
+//------
+
+.hover-border-effect-blue {
+    cursor: pointer;
+    border: solid 1px;
+    border-color: black;
+    transition: .6s ease-in-out;
+}
+
+.hover-border-effect-blue:hover {
+    transition: .4s ease-in-out;
+    border: solid 1px;
+    border-color: $blue transparent $blue transparent;
+    //border-radius: 15px;
+}
+
+.hover-border-effect-red {
+    cursor: pointer;
+    border: solid 1px;
+    border-color: black;
+    transition: .6s ease-in-out;
+}
+
+.hover-border-effect-red:hover {
+    transition: .4s ease-in-out;
+    border: solid 1px;
+    border-color: $red transparent $red transparent;
+    //border-radius: 15px;
+}
+
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    gap: 1rem;
+    padding: 2rem;
+    margin-bottom: 5rem;
+
+    .project {
+        width: 400px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: $gray;
+        padding: 1rem;
+        background-size: cover;
+        border: solid 4px;
+        border-color: black;
+        transition: 1s;
+
+
+
+
+
+        .title {
+            font-size: 3rem;
+        }
+
+        .image {
+            img {
+                width: 250px;
+                height: auto;
+            }
+        }
+
+        .desription {
+            color: white;
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+
+        .used-skills {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+
+
+
+            .skill {
+                //background-color: $gray;
+                background-image: url(../assets/button-background.png);
+                border-radius: 10px;
+                padding: 1rem;
+
+                img {
+                    width: 50px;
+                    height: auto;
+                }
+            }
+
+            .firebaseLogo {
+                height: 50px !important;
+                width: auto !important;
+                padding-left: 7px;
+                padding-right: 7px;
+            }
+        }
+    }
+
+    .project:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+        border: solid 3px $blue;
+        transition: .4s;
+    }
+}
+
+
+
+
+
+.spinner-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    //background-color: black;
+    background-image: url(../assets/background.png);
+}
+
+.spinner {
+    height: 120px;
+    width: 120px;
+    border: 6px solid white;
+    border-color: $blue transparent $blue transparent;
+    border-radius: 50%;
+    animation: spin 4s linear infinite;
+    position: relative;
+
+}
+
+.spinner-inner {
+    height: 100px;
+    width: 100px;
+    border: 6px solid white;
+    border-color: $red transparent $red transparent;
+    border-radius: 50%;
+    animation: spin2 3s linear infinite;
+    position: absolute;
+
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin2 {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
+
+
+
+//-----------------------
+.main {
+
+
+    height: 100%;
+    width: 100vw;
+    //background-color: black;
+    background-image: url(../assets/background.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Space Grotesk', sans-serif;
+
+    .skills {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 1rem;
+        margin-top: 1.3rem;
+        padding-bottom: 2rem;
+        border-bottom: solid 2px $gray;
+
+        .skill {
+            //background-color: $gray;
+            background-image: url(../assets/button-background.png);
+            border-radius: 10px;
+
+
+            img {
+                padding: 1rem;
+                width: 50px;
+                height: 50px;
+            }
+
+            .firebaseLogo {
+                height: 50px;
+                width: auto;
+                padding-left: 23px;
+                padding-right: 23px;
+            }
+
+        }
+
+        .skill:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+
+    }
+
+
+    .greet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 2rem;
+        position: sticky;
+        top: 0px;
+        z-index: 1000;
+
+        //background-color: black;
+        background-image: url(../assets/background.png);
+        width: 100%;
+        height: 200px;
+
+        border-bottom: solid 2px $gray;
+
+        .name {
+            cursor: none;
+        }
+
+        .greetings {
+            color: white;
+            font-size: 3rem;
+            margin-top: 3rem;
+
+        }
+    }
+
+
+    .about-me {
+        width: 40%;
+        margin-top: 1rem;
+        color: white;
+        font-size: 1.5rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+
+
+
+
+
+
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Make the footer span the entire width of the viewport */
+    background-color: #f8f8f8;
+    /* Adjust the background color as needed */
+    z-index: 999;
+    /* Set a higher z-index to ensure it appears above other content */
+}
+
+.footer {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 2px $gray;
+
+    .links {
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+    }
+
+    .link {
+        //background-color: $gray;
+        //background-color: rgb(201, 0, 201);
+        //background-color: rgba(255, 255, 255, 0.178);
+        border-radius: 10px;
+
+    }
+
+    .link:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+
+
+    img {
+        width: 40px;
+        height: 40px;
+        padding: .2rem;
+    }
+}
+
+//-------text animation
+.tracking-in-expand {
+    position: fixed;
+    top: 50%;
+
+    color: white;
+    font-size: 5rem;
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.move-top {
+    animation: move-top 1s forwards;
+}
+
+@keyframes move-top {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-40vh);
+    }
+}
+
+@-webkit-keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+//-----
