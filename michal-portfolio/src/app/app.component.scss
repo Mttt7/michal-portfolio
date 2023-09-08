@@ -294,7 +294,7 @@ $violet: rgb(196, 2, 255);
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    //width: 100%;
     /* Make the footer span the entire width of the viewport */
     background-color: #f8f8f8;
     /* Adjust the background color as needed */
@@ -305,7 +305,8 @@ $violet: rgb(196, 2, 255);
 .footer {
     //background-color: rgb(0, 0, 0);
     background-image: url(../assets/background.png);
-    width: 100%;
+    // width: 100%;
+    width: 100vw;
     height: 60px;
     display: flex;
     align-items: center;
@@ -400,6 +401,18 @@ $violet: rgb(196, 2, 255);
 //media queries
 
 @media (max-width: 720px) {
+
+    .skill:hover {
+        cursor: pointer;
+        transform: none;
+    }
+
+    .link:hover {
+        transform: none;
+        cursor: pointer;
+    }
+
+
     .skills {
         flex-wrap: wrap;
     }
@@ -417,6 +430,8 @@ $violet: rgb(196, 2, 255);
 
 
     .projects {
+        padding: 0;
+
         .project {
             .title {
                 font-size: 2rem;
@@ -427,4 +442,23 @@ $violet: rgb(196, 2, 255);
         }
 
     }
+}
+
+@media (max-width: 450px) {
+
+
+    .project {
+        //width: 40px;
+        height: 200px;
+    }
+}
+
+@media (max-height: 700px) {
+
+    .greet {
+        .greetings {
+            margin-top: 1.7rem !important;
+        }
+    }
+
 }
